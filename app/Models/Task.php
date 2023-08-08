@@ -24,8 +24,6 @@ class Task extends Model
 
     protected $guarded = [];
 
-    public $timestamps = false;
-
     public const VALIDATOR_RULES = [
         'task_id' => 'required|exists:App\Models\Task,id',
     ];

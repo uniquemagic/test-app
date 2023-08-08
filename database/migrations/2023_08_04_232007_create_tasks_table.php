@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('project_id');
             $table->enum('status', Task::STATUSES)->default(Task::STATUS_BACKLOG);
+            $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('project_id')->references('id')->on('projects');
