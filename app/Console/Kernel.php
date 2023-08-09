@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->command(CleanUpTasks::class)
-            ->everyFiveSeconds()
+            ->dailyAt('09:45')
             ->appendOutputTo(storage_path('logs/clean-up-tasks.log'));
     }
 
